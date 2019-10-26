@@ -22,10 +22,10 @@ USER cbgeo
 # RUN mkdir -p /home/cbgeo/research/
 
 # Create a research directory and clone git repo of dealii code
-RUN cd /home/cbgeo/Downloads && \
+RUN cd /home/cbgeo/ && \
     git clone https://github.com/dealii/dealii.git && \
-    cd dealii && git checkout dealii-9.1 \
-    mkdir build && cd build \
+    cd dealii && git checkout dealii-9.1 && \
+    mkdir build && cd build && \
     cmake -DCMAKE_INSTALL_PREFIX=/home/cbgeo/research/dealii/ .. && \
     make install -j 2
 
